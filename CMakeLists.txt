@@ -19,18 +19,20 @@ add_executable(
 		${_INC_DIR}/engine/EngineConfigLoader.h
 		${_INC_DIR}/engine/config/EngineConfig.h
 		${_INC_DIR}/game/Game.h
+		${_INC_DIR}/game/board/GameBoard.h
+		${_INC_DIR}/game/utils/BoardPos.h
+		${_INC_DIR}/game/utils/BoardUtils.h
 		${_INC_DIR}/game/config/GameCfg.h
-		${_INC_DIR}/game/entities/Hero.h
-		${_INC_DIR}/game/entities/Wheel.h
-		${_INC_DIR}/game/proxies/GameProxy.h
-		${_INC_DIR}/game/buttons/WheelButton.h
+		${_INC_DIR}/game/pieces/types/ChessPiece.h
+		${_INC_DIR}/game/defines/ChessDefines.h
+
 
 		${_SRC_DIR}/engine/Engine.cpp
 		${_SRC_DIR}/engine/EngineConfigLoader.cpp
 		${_SRC_DIR}/game/Game.cpp
-		${_SRC_DIR}/game/entities/Hero.cpp
-		${_SRC_DIR}/game/entities/Wheel.cpp
-		${_SRC_DIR}/game/buttons/WheelButton.cpp
+		${_SRC_DIR}/game/board/GameBoard.cpp
+		${_SRC_DIR}/game/utils/BoardUtils.cpp
+		${_SRC_DIR}/game/pieces/types/ChessPiece.cpp
 		${_SRC_DIR}/main.cpp
 )
 

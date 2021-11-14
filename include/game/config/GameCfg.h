@@ -17,19 +17,10 @@
 
 struct GameCfg
 {
-	int32_t runningGirlRsrcId;
-	int32_t wheelRsrcId;
-	int32_t blackBgrRsrcId;
-
-	int32_t startButtonRsrcId;
-	int32_t stopButtonRsrcId;
-
-	int32_t textFontId;
-
-	int32_t wheelRotAminTimerId;
-	int32_t wheelScaleAnimTimerId;
-
-	int32_t moveGirlTimerId;
+	int32_t chessBoardRsrcId;
+	int32_t whitePiecesRsrcId;
+	int32_t blackPiecesRsrcId;
+	int32_t targetRsrcId;
 };
 
 #endif // !CAME_CONFIG_H
