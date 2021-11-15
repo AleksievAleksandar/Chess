@@ -64,7 +64,7 @@ void Renderer::finishFrame()
 	SDL_RenderPresent(this->_sdlRenderer);
 }
 
-void Renderer::renderTexture(SDL_Texture* texture, const DrawParams& drawParams)
+void Renderer::renderTexture(SDL_Texture* texture, const DrawParams& drawParams) const
 {
 	switch (drawParams.widgetType)
 	{
@@ -102,7 +102,7 @@ void Renderer::setWidgetOpacity(SDL_Texture* texture, int32_t opacity)
 	}
 }
 
-void Renderer::drawImage(const DrawParams& drawParams, SDL_Texture* texture)
+void Renderer::drawImage(const DrawParams& drawParams, SDL_Texture* texture) const
 {
 	if (FULL_OPACITY == drawParams.opacity)
 	{
@@ -124,12 +124,12 @@ void Renderer::drawImage(const DrawParams& drawParams, SDL_Texture* texture)
 	}
 }
 
-void Renderer::drawText(const DrawParams& drawParams, SDL_Texture* texture)
+void Renderer::drawText(const DrawParams& drawParams, SDL_Texture* texture) const
 {
 	this->drawTextureInternal(drawParams, texture);
 }
 
-void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* texture)
+void Renderer::drawTextureInternal(const DrawParams& drawParams, SDL_Texture* texture) const
 {
 	SDL_Rect destRect;
 	destRect.x = drawParams.pos.x;

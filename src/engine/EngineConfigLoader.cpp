@@ -124,6 +124,7 @@ static void populateGameConfig(GameCfg& outCfg)
 	outCfg.chessBoardRsrcId = TextureId::CHESS_BOARD;
 	outCfg.targetRsrcId = TextureId::TARGET;
 	outCfg.whitePiecesRsrcId = TextureId::WHITE_PIECES;
+	outCfg.blinkTargetTimerId = TimerId::BLINK_TARGET_TIMER_ID;
 }
 
 EngineConfig EngineConfigLoader::loadConfig()

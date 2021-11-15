@@ -14,21 +14,15 @@
 
 int32_t Game::init(const GameCfg& cfg)
 {
-	if (EXIT_SUCCESS != this->_gameBoard.init(cfg.chessBoardRsrcId))
+	if (EXIT_SUCCESS != this->_gameBoard.init(cfg.chessBoardRsrcId, cfg.targetRsrcId, cfg.blinkTargetTimerId))
 	{
 		std::cerr << "ERROR -> _gameBoard.init() failed with chessBoardRsrcId: " << cfg.chessBoardRsrcId << std::endl;
 		return EXIT_FAILURE;
 	}
 
-	ChessPieceCfg pieceCfg;
-	pieceCfg.boardPos.row = 7;
-	pieceCfg.boardPos.col = 7;
-	pieceCfg.playerId = BLACK_PLAYER_ID;
-	pieceCfg.rsrcId = cfg.blackPiecesRsrcId;
-	pieceCfg.pieceType = PieceType::ROOK;
-	if (EXIT_SUCCESS != this->_piece.init(pieceCfg))
+	if (EXIT_SUCCESS != this->_pieceHandler.init(&this->_gameBoard, cfg.whitePiecesRsrcId, cfg.blackPiecesRsrcId))
 	{
-		std::cerr << "ERROR -> _piece.init() failed." << std::endl;
+		std::cerr << "ERROR -> _pieceHandler.init() failed with RsrcIds: " << cfg.whitePiecesRsrcId << " and " << cfg.blackPiecesRsrcId << std::endl;
 		return EXIT_FAILURE;
 	}
 
@@ -40,15 +34,15 @@ void Game::deInit()
 
 }
 
-void Game::draw()
+void Game::draw() const
 {
 	this->_gameBoard.draw();
-	this->_piece.draw();
+	this->_pieceHandler.draw();
 }
 
-void Game::handleEvent([[maybe_unused]]const InputEvent& event)
+void Game::handleEvent(const InputEvent& event)
 {
-
+	this->_pieceHandler.handleEvent(event);
 }
 
 

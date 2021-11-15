@@ -53,7 +53,7 @@ void DrawMgr::finishFrame()
 	this->_renderer.finishFrame();
 }
 
-void DrawMgr::addDrawCmd(const DrawParams& drawParams)
+void DrawMgr::addDrawCmd(const DrawParams& drawParams) const
 {
 	SDL_Texture* texture = getTextureInternal(drawParams);
 

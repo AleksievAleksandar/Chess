@@ -10,6 +10,7 @@
 
 //Own includes
 #include "game/utils/BoardUtils.h"
+#include "sdl_utils/InputEvent.h"
 
 int32_t ChessPiece::init(const ChessPieceCfg& cfg)
 {
@@ -35,11 +36,28 @@ int32_t ChessPiece::init(const ChessPieceCfg& cfg)
 	return EXIT_SUCCESS;
 }
 
-void ChessPiece::draw()
+void ChessPiece::draw() const
 {
 	this->_pieceImg.draw();
 }
 
-void ChessPiece::handleEvent([[maybe_unused]]const InputEvent& event)
+bool ChessPiece::containsEvent(const InputEvent& event) const
 {
+	return this->_pieceImg.containsPoint(event.pos);
+}
+
+void ChessPiece::setBoardPos(const BoardPos& boardPos)
+{
+	this->_boardPos = boardPos;
+	this->_pieceImg.setPossition(BoardUtils::getAbsPos(this->_boardPos));
+}
+
+BoardPos ChessPiece::getBoardPos() const
+{
+	return this->_boardPos;
+}
+
+int32_t ChessPiece::getPlayerId() const
+{
+	return this->_playerId;
 }

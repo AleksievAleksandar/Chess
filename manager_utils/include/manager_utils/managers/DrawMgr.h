@@ -34,7 +34,7 @@ public:
 	void process() override;
 	void clearScreen();
 	void finishFrame();
-	void addDrawCmd(const DrawParams& drawParams);
+	void addDrawCmd(const DrawParams& drawParams) const;
 	void setWidgetBlendMode(const DrawParams& drawParams, BlendMode blendMode);
 	void setWidgetOpacity(const DrawParams& drawParams, int32_t opacity);
 

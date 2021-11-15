@@ -17,7 +17,7 @@
 class Widget 
 {
 public:
-	void draw();
+	void draw() const;
 	void reset();
 
 	void setFlipType(const WidgetFlip& flipType);
@@ -55,6 +55,7 @@ public:
 	void moveDown(const int32_t delta);
 
 	bool containsPoint(const Point& pos) const;
+	bool isVisible() const;
 
 protected:
 	DrawParams _drawParams;

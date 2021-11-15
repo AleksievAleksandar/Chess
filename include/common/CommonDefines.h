@@ -36,7 +36,7 @@ namespace TimerId
 {
 	enum Keys
 	{
-		EMPTY
+		BLINK_TARGET_TIMER_ID
 	};
 } //namespace TimerId
 

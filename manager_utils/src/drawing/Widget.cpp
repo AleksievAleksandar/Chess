@@ -11,7 +11,7 @@
 //Own includes
 #include "manager_utils/managers/DrawMgr.h"
 
-void Widget::draw()
+void Widget::draw() const
 {
 	if (this->_isVisible)
 	{
@@ -181,4 +181,9 @@ bool Widget::containsPoint(const Point& pos) const
 						  this->_drawParams.width,
 						  this->_drawParams.height);
 	return bound.isPointInside(pos);
+}
+
+bool Widget::isVisible() const
+{
+	return this->_isVisible;
 }

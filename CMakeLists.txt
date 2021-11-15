@@ -24,7 +24,9 @@ add_executable(
 		${_INC_DIR}/game/utils/BoardUtils.h
 		${_INC_DIR}/game/config/GameCfg.h
 		${_INC_DIR}/game/pieces/types/ChessPiece.h
+		${_INC_DIR}/game/pieces/pieceHandler.h
 		${_INC_DIR}/game/defines/ChessDefines.h
+		${_INC_DIR}/game/proxies/GameBoardProxy.h
 
 
 		${_SRC_DIR}/engine/Engine.cpp
@@ -33,6 +35,7 @@ add_executable(
 		${_SRC_DIR}/game/board/GameBoard.cpp
 		${_SRC_DIR}/game/utils/BoardUtils.cpp
 		${_SRC_DIR}/game/pieces/types/ChessPiece.cpp
+		${_SRC_DIR}/game/pieces/pieceHandler.cpp
 		${_SRC_DIR}/main.cpp
 )
 

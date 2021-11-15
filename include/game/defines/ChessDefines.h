@@ -12,12 +12,16 @@
 
 //Forward Declarations
 
-enum PlayerId {
-	WHITE_PLAYER_ID, 
-	BLACK_PLAYER_ID,
+namespace Defines
+{
+	enum PlayerId {
+		WHITE_PLAYER_ID,
+		BLACK_PLAYER_ID,
 
-	PLAYERS_COUNT
-};
+		PLAYERS_COUNT
+	};
+} // namespace Defines
+
 
 enum class PieceType : uint8_t {
 	KING, 

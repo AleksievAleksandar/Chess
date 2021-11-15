@@ -28,8 +28,13 @@ class ChessPiece
 {
 public:
 	int32_t init(const ChessPieceCfg& cfg);
-	void draw();
-	void handleEvent(const InputEvent& event);
+	void draw() const;
+	bool containsEvent(const InputEvent& event) const;
+
+	void setBoardPos(const BoardPos& boardPos);
+	BoardPos getBoardPos() const;
+
+	int32_t getPlayerId() const;
 
 private:
 	Image _pieceImg;

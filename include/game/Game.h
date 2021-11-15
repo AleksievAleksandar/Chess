@@ -12,7 +12,7 @@
 #include "manager_utils/drawing/Image.h"
 #include "game/config/GameCfg.h"
 #include "game/board/GameBoard.h"
-#include "game/pieces/types/ChessPiece.h"
+#include "game/pieces/PieceHandler.h"
 
 //Forward Declarations
 struct InputEvent;
@@ -22,13 +22,12 @@ class Game
 public:
 	int32_t init(const GameCfg& cfg);
 	void deInit();
-	void draw();
+	void draw() const;
 	void handleEvent(const InputEvent& event);
 
 private:
 	GameBoard _gameBoard;
-
-	ChessPiece _piece;
+	PieceHandler _pieceHandler;
 };
 
 #endif // !GAME_H
